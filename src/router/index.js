@@ -15,7 +15,7 @@ const Router = () => {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/addtodos" element={<AddTodos />} />
+          <Route path="/" element={<AddTodos />} />
           <Route path="/apidata" element={<ApiData />} />
         </Routes>
       </BrowserRouter>

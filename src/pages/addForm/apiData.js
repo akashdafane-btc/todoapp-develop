@@ -50,7 +50,7 @@ const ApiData = () => {
       </Table>
       <Button
         label={back}
-        onClick={() => navigate("/addtodos")}
+        onClick={() => navigate("/")}
         type="button"
       />
     </>
