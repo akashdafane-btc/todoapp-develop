@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { Table } from "react-bootstrap";
-import Axios from "axios";
 import { getData } from "../../actions/fetchDataAction";
 import { useSelector, useDispatch } from "react-redux";
 import { Button } from "../../components/index";
@@ -17,14 +16,8 @@ const ApiData = () => {
   const { back } = constant.formConstant;
 
   useEffect(() => {
-    fetchData();
+    dispatch(getData);
   }, []);
-
-  const fetchData = () => {
-    Axios.get("https://jsonplaceholder.typicode.com/users").then((res) => {
-      dispatch(getData(res.data));
-    });
-  };
 
   return (
     <>
@@ -48,11 +41,7 @@ const ApiData = () => {
             ))}
         </tbody>
       </Table>
-      <Button
-        label={back}
-        onClick={() => navigate("/")}
-        type="button"
-      />
+      <Button label={back} onClick={() => navigate("/")} type="button" />
     </>
   );
 };
